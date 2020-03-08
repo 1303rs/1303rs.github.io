@@ -1,21 +1,10 @@
-<html>
-<head>
-	<title>
-		1303rs.nl
-	</title>
+---
+layout: default
+title: Home
+---
 
-	<style>
-	* { font-family: verdana; font-size: 10pt; COLOR: gray; }
-	b { font-weight: bold; }
-	table { height: 50%; border: 1px solid gray;}
-	td { text-align: center; padding: 25;}
-
-	</style>
-</head>
-<body>
-Offline for a short periode of time, will be back asap.
-
-</center>
-</body>
-
-</html>
+<div class="posts">
+{% for page in site.posts %}
+  {% include post.html frontpage=true %}
+{% endfor %}
+</div>

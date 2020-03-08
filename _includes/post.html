@@ -1,0 +1,11 @@
+<article class="post">
+  <header>
+    <h2 class="post-title"><a href="{{ page.url }}">{{ page.title | capitalize }}</a></h2>
+    <div class="post-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ page.date | date: "%-d %b %Y" }}</time>{% if page.tags != empty %} in {% for tag in page.tags %}<a href="/tags/{{ tag }}">{{ tag }}</a> {% endfor %}{% endif %}</div>
+  </header>
+
+  {% if include.frontpage %}
+  {% else %}
+  {% if page.featured-image %}{% include image name="featured-image.png" %}{% endif %}
+  {% include anchor_headings.html html=content anchorBody='#' anchorClass='anchor' %}{% endif %}
+</article>
